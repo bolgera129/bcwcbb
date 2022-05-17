@@ -3,10 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Pics from "./Pics"
+import List from "./List"
+import Navigation from "./Navigation"
+import Horniest from './Horniest';
+import Homophobes from './Homophobes';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/home" element={<App />} />
+          <Route path = "/pics" element={<Pics/>}/>
+          <Route path = "/list/:id" element = {<List />} />
+          <Route path = "/horniest" element={<Horniest/>}/>
+          <Route path = "/homophobes" element={<Homophobes/>}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
